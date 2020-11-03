@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    #container{
+        width: 500px;
+        height: 500px;
+        position: relative;
+        background: blueviolet;
+    }
+    #animate{
+            width: 50px;
+            height: 50px;
+            position: relative;
+            background:palevioletred;
+    }
+</style>
+<body>
+    <p><button type="button" onclick="myMove">Click</button></p>
+   <h3>JavaScript Animation</h3>
+   <div id="container">
+       <div id="animate"></div>
+   </div>
+   <script>
+       function myMove(){
+           var element=document.getElementById("animate");
+           var position=0;
+           var id=setInterval(frame,5);
+           function frame(){
+               if(position == 350)
+               {
+                 clearInterval(id);
+               } 
+               else{
+                   position++;
+                   element.style.top=position + "px";
+                   element.style.left=position + "px";
+               }
+           }
+       }
+   </script>
+</body>
+</html>
